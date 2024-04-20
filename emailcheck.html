@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Email</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    nav {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .company_name {
+        font-size: 25px;
+        font-weight: 600;
+        margin: auto 20px;
+        color: black;
+        text-decoration: none;
+    }
+
+    .leftnav {
+        display: flex;
+        align-items: center;
+    }
+
+    .leftnav ul {
+        display: flex;
+        list-style: none;
+
+    }
+
+    .leftnav ul li {
+        cursor: pointer;
+    }
+
+    .listitems {
+        color: gray;
+        margin: auto 15px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    input {
+        border: none;
+        background-color: #cccccc;
+        width: 80px;
+        padding: 4px;
+    }
+
+    .img1 {
+        width: 15px;
+    }
+
+    .search {
+        border-radius: 10px;
+        display: flex;
+        background-color: #cccccc;
+        padding: 5px;
+    }
+
+    .rightnav {
+        display: flex;
+        margin: auto 30px;
+        align-items: center;
+    }
+
+    .office img {
+        margin: auto 5px;
+    }
+
+    #image-preview img {
+        width: 35px;
+        height: 35px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        margin: auto 10px;
+    }
+
+    .uploadbtn {
+        margin: auto 10px;
+        padding: 10px;
+        width: 80px;
+        border: none;
+        color: white;
+        background-color: #ea4b8b;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    hr {
+        color: #cccc;
+        margin: 20px auto;
+
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+    }
+
+    .container {
+        margin: 50px auto;
+        width: 580px;
+
+    }
+
+
+    .container h3 {
+        font-size: 24px;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .emailimg {
+        display: flex;
+        justify-content: center;
+    }
+
+    .emailimg img {
+        width: 80px;
+    }
+
+    .p1 p {
+        margin: 10px 5px;
+        font-weight: 500;
+        font-size: 16px;
+        color: grey;
+        text-align: center;
+    }
+
+    .p2 p {
+        text-align: center;
+        margin: 10px 5px;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .p3 a {
+        text-decoration: none;
+        color: #ea4b8b;
+    }
+
+    .p1 a {
+        text-decoration: none;
+        color: #ea4b8b;
+    }
+
+    .p3 p {
+
+        margin: 10px 5px;
+        font-weight: 500;
+        font-size: 16px;
+        color: grey;
+        text-align: center;
+    }
+
+    footer {
+        background-color: rgb(247, 247, 247);
+
+    }
+
+    .title h6 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #ea4b8b;
+    }
+
+    .contact {
+        display: flex;
+        justify-content: space-around;
+
+        flex-wrap: wrap;
+        padding-top: 80px;
+        padding-bottom: 60px;
+
+    }
+
+    .title {
+        width: 225px;
+        margin: 10px;
+    }
+
+    .title p {
+        margin: 10px auto;
+        color: gray;
+    }
+
+    .logos {
+        display: flex;
+
+    }
+
+    .logos img {
+        width: 20px;
+        margin: 20px 10px;
+    }
+
+    .list1 ul {
+        list-style: none;
+
+    }
+
+    .list1 ul li {
+        margin: 20px auto;
+        font-size: 16px;
+
+    }
+
+    .grey {
+        color: gray;
+    }
+
+    .list_title {
+        font-weight: 600;
+        color: black;
+    }
+
+    .list1 {
+        width: 145px;
+    }
+
+    .copyright {
+        margin: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .leftcopy {
+        color: gray;
+    }
+
+
+    .rightcopy {
+        color: gray;
+        display: flex;
+        align-items: center;
+    }
+
+    .rightcopy img {
+        width: 20px;
+        margin: auto 2px;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .navbar-toggle img {
+        width: 10px;
+        height: 10px;
+        padding: 12px;
+        background-color: #cccc;
+        border-radius: 8px;
+    }
+
+    .rightcopy p {
+        margin: auto 3px;
+    }
+
+    .listitems a {
+        color: gray;
+        text-decoration: none;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .leftul {
+            flex-direction: column;
+            width: 50%;
+            text-align: left;
+            position: absolute;
+            top: 140px;
+            left: -70%;
+            background-color: #333;
+            transition: all 0.3s ease-in;
+          }
+
+        .leftul li {
+            padding: 15px 0;
+        }
+
+        .leftnav {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .navbar-toggle {
+            display: flex;
+            cursor: pointer;
+        }
+
+        nav {
+            align-items: normal;
+            flex-direction: column;
+        }
+
+        .rightnav {
+            display: flex;
+            margin: 15px 30px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .copyright {
+            justify-content: center;
+        }
+
+        .rightcopy {
+            margin: 5px;
+        }
+
+        .leftul.active {
+            /* Update the class name here */
+            left: 0;
+        }
+        .title_arrow{
+            display: flex;
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="leftnav">
+            <div class="title_arrow">
+                <div class="company_name">
+                    <img src="./resources/dribblelogo.png" alt="logo" style="width: 100px;">
+                </div>
+                <div class="navbar-toggle" id="navbar-toggle" onclick="toggleNavbar()">
+                    <img src="./resources/left arrow.svg" alt="L" class="arrowimg">
+                </div>
+            </div>
+            <ul class="leftul" id="leftul">
+                <li class="listitems"><a href="#"> Inspiration</a></li>
+                <li class="listitems"><a href="#"> Find Work</a></li>
+                <li class="listitems"><a href="#"> Find Work</a></li>
+                <li class="listitems"><a href="#"> Learn Design</a></li>
+                <li class="listitems"><a href="#"> Go Pro</a></li>
+                <li class="listitems"><a href="#"> Hire Designers</a></li>
+            </ul>
+        </div>
+        <div class="rightnav">
+            <div class="search">
+                <img src="./resources/search-svgrepo-com.svg" class="img1" alt="">
+                <input type="text" placeholder=" Search">
+            </div>
+            <div class="office"><img src="./resources/office.jpg" alt="office"></div>
+            <div id="image-preview">
+
+            </div>
+
+            <button type="button" class="uploadbtn">Upload</button>
+        </div>
+    </nav>
+    <hr>
+
+    <div class="main">
+
+        <div class="container">
+            <h3>Please verify your email...</h3>
+
+            <div class="emailimg">
+                <img src="./resources/email.PNG" alt="email">
+            </div>
+
+            <div class="p1">
+                <p>Please verify you email address. We've sent a confirmation email to: </p>
+            </div>
+            <div class="p2">
+                <p>account@refero.design</p>
+            </div>
+
+            <div class="p1">
+                <p>Click the confirmation link in that email to begin using Dribbble.</p>
+            </div>
+
+            <div class="p3">
+                <p>Didn't receive th email? Check your Spam folder, it may have been caught by a filter. If you still
+                    don't
+                    see it, you can <a href="#">resend the confirmation email.</a></p>
+            </div>
+
+            <div class="p1">
+                <p>Wrong email address? <a href="#">Change it.</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contact">
+            <div class="title">
+                <img src="./resources/dribble_logo.png" alt="DR" style="width: 100px;">
+                <p>Dribbble is the world's leading community for creatives to share, grow, and get hired. </p>
+                <div class="logos">
+                    <p><img src="./resources/dribbble-logo-bold-svgrepo-com.svg" alt="facebook"></p>
+                    <p><img src="./resources/twitter.svg" alt="facebook"></p>
+                    <p><img src="./resources/facebook.svg" alt="facebook"></p>
+                    <p><img src="./resources/instagram.svg" alt="facebook"></p>
+                    <p><img src="./resources/pinterest.svg" alt="facebook"></p>
+                </div>
+            </div>
+
+            <div class="list1">
+                <ul>
+                    <li class="list_title">For designers</li>
+                    <li class="grey">Go Pro!</li>
+                    <li class="grey">Explore design work</li>
+                    <li class="grey">Design blog</li>
+                    <li class="grey">Overtime podcast</li>
+                    <li class="grey">Playoffs</li>
+                    <li class="grey">Weekly Warm-Up</li>
+                    <li class="grey">Refer a Friend</li>
+                    <li class="grey">Code of conduct</li>
+                </ul>
+            </div>
+
+            <div class="list1">
+                <ul>
+                    <li class="list_title">Hire designers</li>
+                    <li class="grey">Post a job opening</li>
+                    <li class="grey">Post a freelance project</li>
+                    <li class="grey">Search for designers</li>
+                    <li class="list_title">Brands</li>
+                    <li class="grey">Advertise with us</li>
+                </ul>
+            </div>
+
+            <div class="list1">
+                <ul>
+                    <li class="list_title grey">Company</li>
+                    <li class="grey">About</li>
+                    <li class="grey">Carrers</li>
+                    <li class="grey">Support</li>
+                    <li class="grey">Media kit</li>
+                    <li class="grey">Testimonials</li>
+                    <li class="grey">API</li>
+                    <li class="grey">Terms of service</li>
+                    <li class="grey">Privacy policy</li>
+                    <li class="grey">Cookie policy</li>
+                </ul>
+            </div>
+
+            <div class="list1">
+                <ul>
+                    <li class="list_title grey">Directories</li>
+                    <li class="grey">Design jobs</li>
+                    <li class="grey">Designers for hire</li>
+                    <li class="grey">Freelance designers for hire</li>
+                    <li class="grey">Tags</li>
+                    <li class="grey">Places</li>
+                    <li class="list_title">Design assets</li>
+                    <li class="grey">Dribbble Marketplace</li>
+                    <li class="grey">Creative Market</li>
+                    <li class="grey">Fontspring</li>
+                    <li class="grey">Font Squirrel</li>
+                </ul>
+            </div>
+
+            <div class="list1">
+                <ul>
+                    <li class="list_title grey">Design Resources</li>
+                    <li class="grey">Freelancing</li>
+                    <li class="grey">Design Hiring</li>
+                    <li class="grey">Design Portfolio</li>
+                    <li class="grey">Design Education</li>
+                    <li class="grey">Creative Process</li>
+                    <li class="grey">Design Industry Trends</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <div class="leftcopy"> &#169; 2023 Dribbble. All rights reserved.</div>
+            <div class="rightcopy"><span style="color: black;">20,501,853 </span>
+                <p> shots dribbbled</p> <img src="./resources/dribbble logo.png" alt="D">
+            </div>
+
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var imageData = localStorage.getItem('uploadedImage');
+
+            if (imageData) {
+                var image = document.createElement('img');
+                image.src = imageData;
+                document.getElementById('image-preview').appendChild(image);
+            } else {
+                document.getElementById('image-preview').innerText = 'No image uploaded.';
+            }
+        });
+
+        function toggleNavbar() {
+            var navbarLinks = document.getElementById("leftul");
+            navbarLinks.classList.toggle("active");
+            /*var navbartoggle = document.getElementById("navbar-toggle");
+
+            if (navbarLinks.style.display === "flex") {
+                
+                navbarLinks.style.display = "none";
+                navbartoggle.innerHTML ='<img src="./left arrow.svg" alt="L" class="arrowimg">';
+            } else {
+                navbarLinks.style.display = "flex";
+                navbartoggle.innerHTML ='<img src="./down arrow.svg" alt="L" class="arrowimg">';
+
+            }*/
+
+        }
+    </script>
+</body>
+
+</html>

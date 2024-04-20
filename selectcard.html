@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select card</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    nav img {
+        margin: 10px 25px;
+        width: 100px;
+    }
+
+    nav {
+        display: flex;
+        margin: 20px auto;
+        align-items: center;
+    }
+
+    .arrowimg {
+        width: 10px;
+        height: 10px;
+        padding: 12px;
+        background-color: #cccc;
+        border-radius: 8px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .heading {
+        font-size: 26px;
+        font-weight: 700;
+
+    }
+
+    .para {
+        color: #9e9da2;
+        font-size: 13px;
+        font-weight: 700;
+        margin: 15px auto 30px auto;
+    }
+
+    #submitButton {
+        padding: 8px;
+        width: 150px;
+        border-radius: 8px;
+        border: none;
+        color: white;
+        background-color: #ea4b8b;
+        margin: 10px auto;
+        font-weight: 600;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .cards {
+        margin: 40px auto 30px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 200px;
+        height: 200px;
+        border-radius: 16px;
+        border: 1px solid #cccc;
+        margin: 40px 20px;
+        position: relative;
+    }
+
+    .img img {
+        margin: 10px auto;
+    }
+
+    .card h5 {
+        margin: auto 20px;
+        font-size: 15px;
+    }
+
+    .circle-checkbox {
+        position: relative;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #cccc;
+        outline: none;
+        cursor: pointer;
+        color: white;
+    }
+
+    .circle-checkbox::before {
+        content: '\2714';
+        font-size: 14px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        color: white;
+    }
+
+    .circle-checkbox:checked::before {
+        opacity: 1;
+    }
+
+    .circle-checkbox:checked {
+        background-color: #ea4b8b;
+    }
+
+    .radio {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px auto;
+    }
+
+    .hidetext {
+        margin: 10px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #ccc;
+        text-align: center;
+        display: none;
+    }
+
+    .card1 {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .card.clicked {
+        border: 2px solid #ea4b8b;
+    }
+
+    .end {
+        margin: auto 30px;
+        font-size: 11px;
+        color: #9e9da2;
+        display: none;
+    }
+
+    .anything {
+
+        display: none;
+    }
+</style>
+
+<body>
+    <nav>
+        <img src="./resources/dribble_logo.png" alt="">
+        <img src="./resources/left arrow.svg" alt="L" class="arrowimg">
+    </nav>
+    <div class="container">
+        <form id="myForm" action="emailcheck.html">
+            <div class="heading">What brings you to Dribbble? </div>
+            <div class="para">Select the options that best describe you. Don't worry, you can explore other options
+                later.</div>
+
+            <div class="cards">
+                <div class="card" onclick="toggleCheckbox(event)">
+                    <div class="card1">
+                        <div class="img">
+                            <img src="./resources/ss1.jpg" alt="P1">
+                        </div>
+                        <h5>I'm a designer looking to share my work</h5>
+
+                        <div class="hidetext">
+                            with our 7 million shots from a vast community of designers. Dribbble is the leading
+                            source for design inspiration.
+                        </div>
+                        <div class="radio">
+                            <input type="checkbox" class="circle-checkbox">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card" onclick="toggleCheckbox(event)">
+                    <div class="card1">
+                        <div class="img">
+                            <img src="./resources/ss2.jpg" alt="P2">
+                        </div>
+                        <h5>I'm looking to hire a designer</h5>
+
+                        <div class="hidetext">
+                            with our 7 million shots from a vast community of designers. Dribbble is the leading
+                            source for design inspiration.
+                        </div>
+                        <div class="radio">
+                            <input type="checkbox" class="circle-checkbox">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card" onclick="toggleCheckbox(event)">
+                    <div class="card1">
+                        <div class="img">
+                            <img src="./resources/ss3.jpg" alt="P3">
+                        </div>
+                        <h5>I'm looking for designer inspiration</h5>
+
+                        <div class="hidetext">
+                            with our 7 million shots from a vast community of designers. Dribbble is the leading
+                            source for design inspiration.
+                        </div>
+                        <div class="radio">
+                            <input type="checkbox" class="circle-checkbox">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="anything">
+                <h5>Anything else? you can select multiple</h5>
+            </div>
+            <div class="submit">
+                <button type="submit" id="submitButton">Finish</button>
+            </div>
+            <div class="end">
+                <h5>or Press RETURN</h5>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        function toggleCheckbox(event) {
+            var checkboxes = document.querySelectorAll('.circle-checkbox');
+            var submitButton = document.getElementById('submitButton');
+            var hidetexts = document.querySelectorAll('.hidetext');
+            var cards = document.querySelectorAll('.card');
+            var anythingDiv = document.querySelector('.anything');
+            var endDiv = document.querySelector('.end');
+            var selected = false;
+
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = false;
+            });
+
+            cards.forEach(function (card) {
+                card.classList.remove('clicked');
+            });
+
+            var checkbox = event.currentTarget.querySelector('.circle-checkbox');
+            checkbox.checked = true;
+            event.currentTarget.classList.add('clicked');
+
+            hidetexts.forEach(function (hidetext) {
+                hidetext.style.display = 'none';
+            });
+
+            var hidetext = event.currentTarget.querySelector('.hidetext');
+            hidetext.style.display = 'block';
+
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    selected = true;
+                }
+            });
+
+            if (selected) {
+                anythingDiv.style.display = 'block';
+                endDiv.style.display = 'block';
+                submitButton.style.opacity = 1;
+            } else {
+                anythingDiv.style.display = 'none';
+                endDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
